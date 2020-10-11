@@ -41,6 +41,7 @@ yearlist = de.yearList()
 
 print(de.GetClusterWiseDetails())
 
+@app.route('/')
 @app.route('/line', methods=['POST', 'GET'])
 def showLineChart():
     line_labels = labels
