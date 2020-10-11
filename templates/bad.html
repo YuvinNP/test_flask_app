@@ -1,0 +1,94 @@
+{% extends 'index.html'%}
+
+{% block conn %}
+<table class="table table-bordered table-striped mb-0"	style="border-collapse: separate; height:100%;" id="maintable" cellspacing="10px" >
+		  <tbody>
+			<tr>
+			  <td style="background-color:white;color:#6DBCDB;vertical-align: middle;" >
+
+				<b>GUEST STATUS &nbsp; : &nbsp; <span  style="color:#808B96;;font-size:20px; ">
+
+				<span style='font-size:20px;color:red'>
+							NOT COMING
+				</span>
+
+			  </td>
+			</tr>
+			<tr>
+			  <td style="background-color:#2C3E50;vertical-align: middle;" >
+				<i class='fas fa-shopping-bag' style='font-size:48px;color:white'></i>
+				<b>ARRIVING DAYS &nbsp; : &nbsp;
+
+								{{out['lead_time']}}
+
+				<br>
+				<span style='font-size:20px;color:red'>
+					{{out['text']}}
+				</span>
+			  </td>
+			</tr>
+			  <td style="background-color:#6DBCDB;vertical-align: middle;" >
+
+				<span  style="font-size:2vw; ">
+
+			 			<table class="table table-sm">
+						<thead class="thead-dark">
+							<tr>
+								<td>DISCOUNT</td>
+								<td>OFFERS</td>
+							</tr>
+						</thead>
+							<tr>
+								<td>{{out['discount']}}</td>
+								<td style='font-size:14px;color:white'>
+									{% if out['discount'] !='No Discount' %}
+									{{'3 Days Night With Free SPA'}}
+								{% endif %}</td>
+							</tr>
+
+						</table>
+
+				</span>
+
+			  </td>
+			</tr>
+
+			<tr>
+
+			 <td style="background-color:#7DC900;vertical-align: middle;" >
+
+				<b>SEGMENT PREFFERED FOOD TYPE :</b>
+
+								{{out['food']}}
+
+
+			  </td>
+
+			</tr>
+
+			<tr>
+
+			 <td style="background-color:#F4F6F6 ;vertical-align: middle;color:#3F454C;" >
+
+				<b>SEGMENT PREFFERED ROOM TYPE :</b>
+
+							{{out['room']}}
+
+			  </td>
+
+			</tr>
+
+			<tr>
+
+			 <td style="background-color:#FC4349 ;vertical-align: middle;color:WHITE;font-size:20px;" >
+
+				<b>CONSTANTLY KEEP TOUCH WITH THE CURRENT GUEST THROUGH EMAIL AND SOCIAL MEDIA</b>
+
+
+
+			  </td>
+
+			</tr>
+		  </tbody>
+	</table>
+{% endblock %}

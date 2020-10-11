@@ -1,0 +1,285 @@
+{% extends 'dashbord.html' %}
+
+{% block head %}
+<title>Home3</title>
+{% endblock %}
+
+{% block currentdropdown %}
+<label for="cyear">Current Financial Season:</label>
+
+<select name="cyear" id="cyear">
+    {% for year in yearlist %}
+        <option value="{{ year }}">{{ year }}</option>
+    {% endfor %}
+</select>
+{% endblock %}
+
+{% block previousdropdown %}
+<label for="pyear">Previous Financial Season:</label>
+
+<select name="pyear" id="pyear">
+    {% for year in yearlist %}
+        <option value="{{ year }}">{{ year }}</option>
+    {% endfor %}
+</select>
+{% endblock %}
+
+{% block comparison %}
+    <div class="center">
+        <h6>{{ comparison }}</h6>
+    </div>
+
+{% endblock %}
+
+{% block chart %}
+
+<canvas id="chart" width="800" height="550"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script type="text/javascript">
+var ctx = document.getElementById('chart').getContext('2d');
+
+var myChart = new Chart(ctx, {
+
+    type: 'line',
+    data: {
+        labels: [{% for i in labels %}
+                    '{{ i }}',
+            {% endfor %}
+        ],
+        datasets: [{
+            label: 'Financial Year 1',
+            data: [{% for i in values2 %}
+                    '{{ i }}',
+                {% endfor %}]
+            ,
+            fill: false,
+            lineTension: 0,
+            backgroundColor: [
+                {% for i in range(12) %}
+                    '{{'rgba(54, 162, 235, 1)' }}',
+                {% endfor %}
+            ],
+            borderColor: [
+                'rgba(54, 162, 235, 1)',
+
+            ],
+            borderWidth: 1
+        },
+        {
+            label: 'Financial Year 2',
+            data: [{% for i in values3 %}
+                    '{{ i }}',
+                {% endfor %}]
+            ,
+            fill: false,
+            lineTension: 0,
+            backgroundColor: [
+                {% for i in range(12) %}
+                    '{{'rgba(255,51,0,1)' }}',
+                {% endfor %}
+            ],
+            borderColor: [
+                'rgba(255,51,0,1)',
+
+            ],
+            borderWidth: 1,
+        },
+        {
+            label: 'Current Financial Year',
+            data: [{% for i in values4 %}
+                    '{{ i }}',
+                {% endfor %}]
+            ,
+            fill: false,
+            lineTension: 0,
+            backgroundColor: [
+                 {% for i in range(12) %}
+                    '{{'rgba(255,153,0,1)' }}',
+                {% endfor %}
+            ],
+            borderColor: [
+                'rgba(255,153,0,1)',
+
+            ],
+            borderWidth: 1,
+
+        },
+        {
+            label: 'AVG_ADR',
+            data: [{% for i in avgValues %}
+                    '{{ i }}',
+                {% endfor %}]
+            ,
+            lineTension: 0,
+            fill: false,
+            backgroundColor: [
+                {% for i in range(12) %}
+                    '{{'rgba(102,51,204,1)' }}',
+                {% endfor %}
+            ],
+            borderColor: [
+                'rgba(102,51,204,1)',
+
+            ],
+            borderWidth: 1,
+        }
+
+        ]
+    },
+    options: {
+        responsive: false,
+        scales: {
+            yAxes: [{
+                scaleLabel: {
+                  display: true,
+                  labelString : 'Average ADR'
+                },
+                ticks: {
+                    beginAtZero: true
+                }
+            }],
+            xAxes: [{
+                scaleLabel: {
+                  display: true,
+                  labelString : 'Month'
+                },
+                ticks: {
+                    beginAtZero: true
+                }
+            }],
+        }
+    }
+});
+</script>
+
+{% endblock %}
+
+{% block totalChart %}
+<canvas id="chartTotal" width="800" height="550"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script type="text/javascript">
+var ctx = document.getElementById('chartTotal').getContext('2d');
+
+var myChart = new Chart(ctx, {
+
+    type: 'line',
+    data: {
+        labels: [{% for i in labels %}
+                    '{{ i }}',
+            {% endfor %}
+        ],
+        datasets: [{
+            label: 'Financial Year 1',
+            data: [{% for i in season1Total %}
+                    '{{ i }}',
+                {% endfor %}]
+            ,
+            fill: false,
+            lineTension: 0,
+            backgroundColor: [
+                {% for i in range(12) %}
+                    '{{'rgba(54, 162, 235, 1)' }}',
+                {% endfor %}
+            ],
+            borderColor: [
+                'rgba(54, 162, 235, 1)',
+
+            ],
+            borderWidth: 1
+        },
+        {
+            label: 'Financial Year 2',
+            data: [{% for i in season2Total %}
+                    '{{ i }}',
+                {% endfor %}]
+            ,
+            fill: false,
+            lineTension: 0,
+            backgroundColor: [
+                {% for i in range(12) %}
+                    '{{'rgba(255,51,0,1)' }}',
+                {% endfor %}
+            ],
+            borderColor: [
+                'rgba(255,51,0,1)',
+
+            ],
+            borderWidth: 1,
+        },
+        {
+            label: 'Current Financial Year',
+            data: [{% for i in season3Total %}
+                    '{{ i }}',
+                {% endfor %}]
+            ,
+            fill: false,
+            lineTension: 0,
+            backgroundColor: [
+                 {% for i in range(12) %}
+                    '{{'rgba(255,153,0,1)' }}',
+                {% endfor %}
+            ],
+            borderColor: [
+                'rgba(255,153,0,1)',
+
+            ],
+            borderWidth: 1,
+
+        },{
+            label: 'AVG Revenue',
+            data: [{% for i in avgTotal %}
+                    '{{ i }}',
+                {% endfor %}]
+            ,
+            lineTension: 0,
+            fill: false,
+            backgroundColor: [
+                {% for i in range(12) %}
+                    '{{'rgba(102,51,204,1)' }}',
+                {% endfor %}
+            ],
+            borderColor: [
+                'rgba(102,51,204,1)',
+
+            ],
+            borderWidth: 1,
+        }
+        ]
+    },
+    options: {
+        responsive: false,
+        legend: {
+            labels: {
+                // This more specific font property overrides the global property
+                font: {
+                    family: 'Roboto'
+                }
+            }
+        },
+        scales: {
+            yAxes: [{
+                scaleLabel: {
+                  display: true,
+                  labelString : 'Total Revenue per Month'
+                },
+                ticks: {
+                    beginAtZero: true
+                }
+            }],
+            xAxes: [{
+                scaleLabel: {
+                  display: true,
+                  labelString : 'Month'
+                },
+                ticks: {
+                    beginAtZero: true
+                }
+            }],
+        }
+    }
+});
+
+
+</script>
+
+{% endblock %}

@@ -1,0 +1,320 @@
+{% extends 'base.html'%}
+
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<div class="bg-white" style="padding:10px;">
+    <h1 style="text-align:center;">Descriptive Analysis </h1>
+    <hr>
+    <div style="padding-left:20px;overflow-y: auto; height:700px;">
+ <div class="row">
+
+    <div class="col" >
+        <br>
+        <br>
+        <div class="row" style="text-align: center" >
+            <div class="col-sm-11" style="background-color:#004085; color:white; padding:3px; text-align: center; font-weight: bold;">
+                <h2> Segment 01 </h2>
+            </div>
+        </div>
+
+
+        <br>
+        <div class="row" style="text-align: center" >
+            <div class="col-sm-11" style="background-color:#2C3E50; color:white; padding:2px; text-align: center;">
+                    <h4> Main Countries </h4>
+            </div>
+        </div>
+        <div class="row" >
+             {% block CountryPie %}{% endblock %}
+        </div>
+
+
+        <br>
+        <div class="row" style="text-align: center" >
+            <div class="col-sm-11" style="background-color:#2C3E50; color:white; padding:2px; text-align: center;">
+                <h4> Seasonal Months for Year </h4>
+            </div>
+        </div>
+        <div class="row">
+             {% block SeasonalMonthsBar %}{% endblock %}
+        </div>
+
+
+
+        <br>
+        <div class="row" style="text-align: center" >
+            <div class="col-sm-11" style="background-color:#2C3E50; color:white; padding:2px; text-align: center;">
+                    <h4> Loyalty Weight of Customers </h4>
+            </div>
+        </div>
+        <div class="row">
+            {% block LoyaltyPie %}{% endblock %}
+        </div>
+        <br>
+
+
+
+        <br>
+        <div class="row" style="text-align: center" >
+            <div class="col-sm-11" style="background-color:#2C3E50; color:white; padding:2px; text-align: center;">
+                    <h4> Food Preferences </h4>
+            </div>
+        </div>
+        <div class="row">
+             {% block FoodHBar %}{% endblock %}
+        </div>
+
+
+
+        <br>
+        <div class="row" style="text-align: center" >
+            <div class="col-sm-11" style="background-color:#2C3E50; color:white; padding:2px; text-align: center;">
+                    <h4> Annual Total Revenue </h4>
+            </div>
+        </div>
+        <div class="row">
+             {% block TotalRevenue %}{% endblock %}
+        </div>
+
+
+
+        <br>
+        <div class="row" style="text-align: center" >
+            <div class="col-sm-11" style="background-color:#2C3E50; color:white; padding:2px; text-align: center;">
+                    <h4> Return on Investment(%) </h4>
+            </div>
+        </div>
+        <div class="row">
+             {% block RoiBar %}{% endblock %}
+        </div>
+
+
+
+        <br>
+        <div class="row" style="text-align: center" >
+            <div class="col-sm-11" style="background-color:#2C3E50; color:white; padding:2px; text-align: center;">
+                    <h4> LANGUAGE SKILLS :   {% block skills %}{% endblock %}</h4>
+            </div>
+        </div>
+        <br>
+        <div class="row" style="text-align: center" >
+            <div class="col-sm-11" style="background-color:#2C3E50; color:white; padding:2px; text-align: center;">
+                    <h3> Cancelled Days </h3>
+                    {% block cancel %}{% endblock %}
+            </div>
+        </div>
+    </div>
+
+{###############################################    Segment 02   ####################################################}
+
+
+    <div class="col" >
+        <br>
+        <br>
+        <div class="row" style="text-align: center" >
+            <div class="col-sm-11" style="background-color:#004085; color:white; padding:3px; text-align: center; font-weight: bold;">
+                <h2> Segment 02 </h2>
+            </div>
+        </div>
+
+
+        <br>
+        <div class="row" style="text-align: center" >
+            <div class="col-sm-11" style="background-color:#2C3E50; color:white; padding:2px; text-align: center;">
+                    <h4> Main Countries </h4>
+            </div>
+        </div>
+        <div class="row" >
+             {% block CountryPie2 %}{% endblock %}
+        </div>
+
+
+        <br>
+        <div class="row" style="text-align: center" >
+            <div class="col-sm-11" style="background-color:#2C3E50; color:white; padding:2px; text-align: center;">
+                    <h4> Seasonal Months for Year </h4>
+            </div>
+        </div>
+        <div class="row">
+             {% block SeasonalMonthsBar2 %}{% endblock %}
+        </div>
+
+
+
+        <br>
+        <div class="row" style="text-align: center" >
+            <div class="col-sm-11" style="background-color:#2C3E50; color:white; padding:2px; text-align: center;">
+                    <h4> Loyalty Weight of Customers </h4>
+            </div>
+        </div>
+        <div class="row">
+            {% block LoyaltyPie2 %}{% endblock %}
+        </div>
+        <br>
+
+
+
+        <br>
+        <div class="row" style="text-align: center" >
+            <div class="col-sm-11" style="background-color:#2C3E50; color:white; padding:2px; text-align: center;">
+                    <h4> Food Preferences </h4>
+            </div>
+        </div>
+        <div class="row">
+             {% block FoodHBar2 %}{% endblock %}
+        </div>
+
+
+
+        <br>
+        <div class="row" style="text-align: center" >
+            <div class="col-sm-11" style="background-color:#2C3E50; color:white; padding:2px; text-align: center;">
+                    <h4> Annual Total Revenue </h4>
+            </div>
+        </div>
+        <div class="row">
+             {% block TotalRevenue2 %}{% endblock %}
+        </div>
+
+
+
+        <br>
+        <div class="row" style="text-align: center" >
+            <div class="col-sm-11" style="background-color:#2C3E50; color:white; padding:2px; text-align: center;">
+                    <h4> Return on Investment(%) </h4>
+            </div>
+        </div>
+        <div class="row">
+             {% block RoiBar2 %}{% endblock %}
+        </div>
+
+
+
+        <br>
+        <div class="row" style="text-align: center" >
+            <div class="col-sm-11" style="background-color:#2C3E50; color:white; padding:2px; text-align: center;">
+                    <h4> LANGUAGE SKILLS :   {% block skills2 %}{% endblock %}</h4>
+            </div>
+        </div>
+        <br>
+        <div class="row" style="text-align: center" >
+            <div class="col-sm-11" style="background-color:#2C3E50; color:white; padding:2px; text-align: center;">
+                    <h3> Cancelled Days </h3>
+                    {% block cancel2 %}{% endblock %}
+            </div>
+        </div>
+    </div>
+
+
+{###############################################    Segment 03   ####################################################}
+
+    <div class="col" >
+        <br>
+        <br>
+        <div class="row" style="text-align: center" >
+            <div class="col-sm-11" style="background-color:#004085; color:white; padding:3px; text-align: center; font-weight: bold;">
+                <h2> Segment 03 </h2>
+            </div>
+        </div>
+
+
+        <br>
+        <div class="row" style="text-align: center" >
+            <div class="col-sm-11" style="background-color:#2C3E50; color:white; padding:2px; text-align: center;">
+                    <h4> Main Countries </h4>
+            </div>
+        </div>
+        <div class="row" >
+             {% block CountryPie3 %}{% endblock %}
+        </div>
+
+
+        <br>
+        <div class="row" style="text-align: center" >
+            <div class="col-sm-11" style="background-color:#2C3E50; color:white; padding:2px; text-align: center;">
+                    <h4> Seasonal Months for Year </h4>
+            </div>
+        </div>
+        <div class="row">
+             {% block SeasonalMonthsBar3 %}{% endblock %}
+        </div>
+
+
+
+        <br>
+        <div class="row" style="text-align: center" >
+            <div class="col-sm-11" style="background-color:#2C3E50; color:white; padding:2px; text-align: center;">
+                    <h4> Loyalty Weight of Customers </h4>
+            </div>
+        </div>
+        <div class="row">
+            {% block LoyaltyPie3 %}{% endblock %}
+        </div>
+        <br>
+
+
+
+        <br>
+        <div class="row" style="text-align: center" >
+            <div class="col-sm-11" style="background-color:#2C3E50; color:white; padding:2px; text-align: center;">
+                    <h4> Food Preferences </h4>
+            </div>
+        </div>
+        <div class="row">
+             {% block FoodHBar3 %}{% endblock %}
+        </div>
+
+
+
+        <br>
+        <div class="row" style="text-align: center" >
+            <div class="col-sm-11" style="background-color:#2C3E50; color:white; padding:2px; text-align: center;">
+                    <h4> Annual Total Revenue </h4>
+            </div>
+        </div>
+        <div class="row">
+             {% block TotalRevenue3 %}{% endblock %}
+        </div>
+
+
+
+        <br>
+        <div class="row" style="text-align: center" >
+            <div class="col-sm-11" style="background-color:#2C3E50; color:white; padding:2px; text-align: center;">
+                    <h4> Return on Investment(%) </h4>
+            </div>
+        </div>
+        <div class="row">
+             {% block RoiBar3 %}{% endblock %}
+        </div>
+
+
+
+        <br>
+        <div class="row" style="text-align: center" >
+            <div class="col-sm-11" style="background-color:#2C3E50; color:white; padding:2px; text-align: center;">
+                    <h4> LANGUAGE SKILLS :   {% block skills3 %}{% endblock %}</h4>
+            </div>
+        </div>
+        <br>
+        <div class="row" style="text-align: center" >
+            <div class="col-sm-11" style="background-color:#2C3E50; color:white; padding:2px; text-align: center;">
+                    <h3> Cancelled Days </h3>
+                    {% block cancel3 %}{% endblock %}
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    </div>
+</div>
+</div>
+{% endblock %}

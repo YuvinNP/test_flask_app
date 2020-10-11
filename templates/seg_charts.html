@@ -1,0 +1,1151 @@
+{% extends 'customer_seg.html' %}
+
+{% block TotalRevenue %}
+
+<canvas id="myChart5" width="400" height="400"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script type="text/javascript">
+var ctx = document.getElementById('myChart5').getContext('2d');
+
+var myChart = new Chart(ctx, {
+
+    type: 'bar',
+    data: {
+        labels: [{% for i in tlabels %}
+                    '{{ i }}',
+            {% endfor %}
+        ],
+        datasets: [{
+            label: 'Total Revenue of Years',
+            data: [{% for i in tvalues %}
+                    '{{ i }}',
+                {% endfor %}]
+            ,
+            fill: false,
+            lineTension: 0,
+            backgroundColor: [
+
+                'rgba(0, 122, 204, 0.9)',
+                'rgba(0, 153, 0, 0.8)',
+                'rgba(198, 26, 255)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(204, 0, 0, 1)'
+            ],
+            borderWidth: 1
+        }
+        ]
+    },
+    options: {
+        responsive: false,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
+{% endblock %}
+
+
+
+
+{% block CountryPie %}
+
+<canvas id="myChart4" width="350" height="350"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script type="text/javascript">
+var ctx = document.getElementById('myChart4').getContext('2d');
+
+var myChart = new Chart(ctx, {
+
+    type: 'pie',
+    data: {
+        labels: [{% for i in clabels %}
+                    '{{ i }}',
+            {% endfor %}
+        ],
+        datasets: [{
+            label: 'Popular Countries',
+            data: [{% for i in cvalues %}
+                    '{{ i }}',
+                {% endfor %}]
+            ,
+            fill: false,
+            lineTension: 0,
+            backgroundColor: [
+                'rgba(255, 209, 26, 0.9)',
+                'rgba(0, 153, 0, 0.8)',
+                'rgba(128, 0, 255, 0.9)',
+                'rgba(255, 77, 255, 0.7)',
+                'rgba(26, 83, 255, 0.7)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }
+        ]
+    },
+    options: {
+        responsive: false,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
+{% endblock %}
+
+
+
+{% block SeasonalMonthsBar %}
+
+<canvas id="myChart" width="400" height="400"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script type="text/javascript">
+var ctx = document.getElementById('myChart').getContext('2d');
+
+var myChart = new Chart(ctx, {
+
+    type: 'bar',
+    data: {
+        labels: [{% for i in smlabels %}
+                    '{{ i }}',
+            {% endfor %}
+        ],
+        datasets: [{
+            label: 'Seasonal Months Patterns',
+            data: [{% for i in smvalues %}
+                    '{{ i }}',
+                {% endfor %}]
+            ,
+            fill: false,
+            lineTension: 0,
+            backgroundColor: [
+                'rgba(0, 255, 0, 0.5)',
+                'rgba(54, 162, 235, 0.5)',
+                'rgba(255, 206, 86, 0.5)',
+                'rgba(75, 192, 192, 0.5)',
+                'rgba(153, 102, 255, 0.5)',
+                'rgba(255, 159, 64, 0.5)',
+                'rgba(65, 86, 235, 0.5)',
+                'rgba(135, 96, 206, 0.5)',
+                'rgba(55, 192, 152, 0.5)',
+                'rgba(243, 92, 255, 0.5)',
+                'rgba(125, 150, 84, 0.5)',
+                'rgba(83, 255, 255, 0.5)',
+                'rgba(245, 55, 165, 0.5)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }
+        ]
+    },
+    options: {
+        responsive: false,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
+{% endblock %}
+
+
+
+
+
+{% block LoyaltyPie %}
+
+<canvas id="myChart1" width="350" height="350"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script type="text/javascript">
+var ctx = document.getElementById('myChart1').getContext('2d');
+
+var myChart = new Chart(ctx, {
+
+    type: 'pie',
+    data: {
+        labels: [{% for i in loylabels %}
+                    '{{ i }}',
+            {% endfor %}
+        ],
+        datasets: [{
+            label: 'Customer Loyalty Levels',
+            data: [{% for i in loyvalues %}
+                    '{{ i }}',
+                {% endfor %}]
+            ,
+            fill: false,
+            lineTension: 0,
+            backgroundColor: [
+                'rgba(255, 255, 26, 0.9)',
+                'rgba(255, 71, 26, 0.9)',
+                'rgba(191, 191, 191, 1)',
+                'rgba(0, 64, 255, 0.9)'
+
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)'
+            ],
+            borderWidth: 1
+        }
+        ]
+    },
+    options: {
+        responsive: false,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
+{% endblock %}
+
+
+
+
+
+{% block RoiBar %}
+
+<canvas id="myChart2" width="400" height="400"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script type="text/javascript">
+var ctx = document.getElementById('myChart2').getContext('2d');
+
+var myChart = new Chart(ctx, {
+
+    type: 'bar',
+    data: {
+        labels: [{% for i in rolabels %}
+                    '{{ i }}',
+            {% endfor %}
+        ],
+        datasets: [{
+            label: 'ROI Values for the Years',
+            data: [{% for i in rovalues %}
+                    '{{ i }}',
+                {% endfor %}]
+            ,
+            fill: false,
+            lineTension: 0,
+            backgroundColor: [
+                'rgba(153, 0, 153, 0.8)',
+                'rgba(153, 102, 255, 0.8)',
+                'rgba(255, 159, 64, 0.8)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }
+        ]
+    },
+    options: {
+        responsive: false,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
+{% endblock %}
+
+
+
+
+
+{% block FoodHBar %}
+
+<canvas id="myChart3" width="400" height="400"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script type="text/javascript">
+var ctx = document.getElementById('myChart3').getContext('2d');
+
+var myChart = new Chart(ctx, {
+
+    type: 'horizontalBar',
+    data: {
+        labels: [{% for i in flabels %}
+                    '{{ i }}',
+            {% endfor %}
+        ],
+        datasets: [{
+            label: 'Food Favours of Visitors',
+            data: [{% for i in fvalues %}
+                    '{{ i }}',
+                {% endfor %}]
+            ,
+            fill: false,
+            lineTension: 0,
+            backgroundColor: [
+                'rgba(255, 0, 0, 0.9)',
+                'rgba(26, 26, 255, 0.9)',
+                'rgba(179, 255, 26, 0.8)',
+                'rgba(0, 204, 0, 0.8)',
+                'rgba(153, 102, 255, 0.7)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }
+        ]
+    },
+    options: {
+        responsive: false,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
+{% endblock %}
+
+
+{% block skills %}
+    <table>
+    <tr>
+        <th>Country</th>
+        <th>Ability</th>
+    </tr>
+    {% for i in dic3.keys() %}
+       <tr>
+            <td> {{ i }} </td>
+            <td> {{ dic3[i] }} </td>
+       </tr>
+    {% endfor %}
+    </table>
+{% endblock %}
+
+
+
+{% block cancel %}
+    {{ cdays }}
+{% endblock %}
+
+
+
+
+#########################################################################################################
+############################################SEGMENT 02###################################################
+
+{% block TotalRevenue2 %}
+
+<canvas id="myChart6" width="400" height="400"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script type="text/javascript">
+var ctx = document.getElementById('myChart6').getContext('2d');
+
+var myChart = new Chart(ctx, {
+
+    type: 'bar',
+    data: {
+        labels: [{% for i in tlabels2 %}
+                    '{{ i }}',
+            {% endfor %}
+        ],
+        datasets: [{
+            label: 'Total Revenue of Years',
+            data: [{% for i in tvalues2 %}
+                    '{{ i }}',
+                {% endfor %}]
+            ,
+            fill: false,
+            lineTension: 0,
+            backgroundColor: [
+
+                'rgba(0, 122, 204, 0.9)',
+                'rgba(0, 153, 0, 0.8)',
+                'rgba(198, 26, 255)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(204, 0, 0, 1)'
+            ],
+            borderWidth: 1
+        }
+        ]
+    },
+    options: {
+        responsive: false,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
+{% endblock %}
+
+
+
+
+{% block CountryPie2 %}
+
+<canvas id="myChart7" width="350" height="350"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script type="text/javascript">
+var ctx = document.getElementById('myChart7').getContext('2d');
+
+var myChart = new Chart(ctx, {
+
+    type: 'pie',
+    data: {
+        labels: [{% for i in clabels2 %}
+                    '{{ i }}',
+            {% endfor %}
+        ],
+        datasets: [{
+            label: 'Popular Countries',
+            data: [{% for i in cvalues2 %}
+                    '{{ i }}',
+                {% endfor %}]
+            ,
+            fill: false,
+            lineTension: 0,
+            backgroundColor: [
+                'rgba(255, 209, 26, 0.9)',
+                'rgba(0, 153, 0, 0.8)',
+                'rgba(128, 0, 255, 0.9)',
+                'rgba(255, 77, 255, 0.7)',
+                'rgba(26, 83, 255, 0.7)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }
+        ]
+    },
+    options: {
+        responsive: false,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
+{% endblock %}
+
+
+
+{% block SeasonalMonthsBar2 %}
+
+<canvas id="myChart8" width="400" height="400"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script type="text/javascript">
+var ctx = document.getElementById('myChart8').getContext('2d');
+
+var myChart = new Chart(ctx, {
+
+    type: 'bar',
+    data: {
+        labels: [{% for i in smlabels2 %}
+                    '{{ i }}',
+            {% endfor %}
+        ],
+        datasets: [{
+            label: 'Seasonal Months Patterns',
+            data: [{% for i in smvalues2 %}
+                    '{{ i }}',
+                {% endfor %}]
+            ,
+            fill: false,
+            lineTension: 0,
+            backgroundColor: [
+                'rgba(0, 255, 0, 0.5)',
+                'rgba(54, 162, 235, 0.5)',
+                'rgba(255, 206, 86, 0.5)',
+                'rgba(75, 192, 192, 0.5)',
+                'rgba(153, 102, 255, 0.5)',
+                'rgba(255, 159, 64, 0.5)',
+                'rgba(65, 86, 235, 0.5)',
+                'rgba(135, 96, 206, 0.5)',
+                'rgba(55, 192, 152, 0.5)',
+                'rgba(243, 92, 255, 0.5)',
+                'rgba(125, 150, 84, 0.5)',
+                'rgba(83, 255, 255, 0.5)',
+                'rgba(245, 55, 165, 0.5)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }
+        ]
+    },
+    options: {
+        responsive: false,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
+{% endblock %}
+
+
+
+
+
+{% block LoyaltyPie2 %}
+
+<canvas id="myChart9" width="350" height="350"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script type="text/javascript">
+var ctx = document.getElementById('myChart9').getContext('2d');
+
+var myChart = new Chart(ctx, {
+
+    type: 'pie',
+    data: {
+        labels: [{% for i in loylabels2 %}
+                    '{{ i }}',
+            {% endfor %}
+        ],
+        datasets: [{
+            label: 'Customer Loyalty Levels',
+            data: [{% for i in loyvalues2 %}
+                    '{{ i }}',
+                {% endfor %}]
+            ,
+            fill: false,
+            lineTension: 0,
+            backgroundColor: [
+                'rgba(255, 255, 26, 0.9)',
+                'rgba(255, 71, 26, 0.9)',
+                'rgba(191, 191, 191, 1)',
+                'rgba(0, 64, 255, 0.9)'
+
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)'
+            ],
+            borderWidth: 1
+        }
+        ]
+    },
+    options: {
+        responsive: false,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
+{% endblock %}
+
+
+
+
+
+{% block RoiBar2 %}
+
+<canvas id="myChart10" width="400" height="400"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script type="text/javascript">
+var ctx = document.getElementById('myChart10').getContext('2d');
+
+var myChart = new Chart(ctx, {
+
+    type: 'bar',
+    data: {
+        labels: [{% for i in rolabels2 %}
+                    '{{ i }}',
+            {% endfor %}
+        ],
+        datasets: [{
+            label: 'ROI Values for the Years',
+            data: [{% for i in rovalues2 %}
+                    '{{ i }}',
+                {% endfor %}]
+            ,
+            fill: false,
+            lineTension: 0,
+            backgroundColor: [
+                'rgba(153, 0, 153, 0.8)',
+                'rgba(153, 102, 255, 0.8)',
+                'rgba(255, 159, 64, 0.8)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }
+        ]
+    },
+    options: {
+        responsive: false,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
+{% endblock %}
+
+
+
+
+
+{% block FoodHBar2 %}
+
+<canvas id="myChart11" width="400" height="400"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script type="text/javascript">
+var ctx = document.getElementById('myChart11').getContext('2d');
+
+var myChart = new Chart(ctx, {
+
+    type: 'horizontalBar',
+    data: {
+        labels: [{% for i in flabels2 %}
+                    '{{ i }}',
+            {% endfor %}
+        ],
+        datasets: [{
+            label: 'Food Favours of Visitors',
+            data: [{% for i in fvalues2 %}
+                    '{{ i }}',
+                {% endfor %}]
+            ,
+            fill: false,
+            lineTension: 0,
+            backgroundColor: [
+                'rgba(255, 0, 0, 0.9)',
+                'rgba(26, 26, 255, 0.9)',
+                'rgba(179, 255, 26, 0.8)',
+                'rgba(0, 204, 0, 0.8)',
+                'rgba(153, 102, 255, 0.7)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }
+        ]
+    },
+    options: {
+        responsive: false,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
+{% endblock %}
+
+
+{% block skills2 %}
+    <table>
+    <tr>
+        <th>Country</th>
+        <th>Ability</th>
+    </tr>
+    {% for i in dic32.keys() %}
+       <tr>
+            <td> {{ i }} </td>
+            <td> {{ dic32[i] }} </td>
+       </tr>
+    {% endfor %}
+    </table>
+{% endblock %}
+
+
+
+{% block cancel2 %}
+    {{ cdays2 }}
+{% endblock %}
+
+
+
+
+
+#########################################################################################################
+############################################SEGMENT 03###################################################
+
+{% block TotalRevenue3 %}
+
+<canvas id="myChart12" width="400" height="400"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script type="text/javascript">
+var ctx = document.getElementById('myChart12').getContext('2d');
+
+var myChart = new Chart(ctx, {
+
+    type: 'bar',
+    data: {
+        labels: [{% for i in tlabels3 %}
+                    '{{ i }}',
+            {% endfor %}
+        ],
+        datasets: [{
+            label: 'Total Revenue of Years',
+            data: [{% for i in tvalues3 %}
+                    '{{ i }}',
+                {% endfor %}]
+            ,
+            fill: false,
+            lineTension: 0,
+            backgroundColor: [
+
+                'rgba(0, 122, 204, 0.9)',
+                'rgba(0, 153, 0, 0.8)',
+                'rgba(198, 26, 255)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(204, 0, 0, 1)'
+            ],
+            borderWidth: 1
+        }
+        ]
+    },
+    options: {
+        responsive: false,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
+{% endblock %}
+
+
+
+
+{% block CountryPie3 %}
+
+<canvas id="myChart13" width="350" height="350"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script type="text/javascript">
+var ctx = document.getElementById('myChart13').getContext('2d');
+
+var myChart = new Chart(ctx, {
+
+    type: 'pie',
+    data: {
+        labels: [{% for i in clabels3 %}
+                    '{{ i }}',
+            {% endfor %}
+        ],
+        datasets: [{
+            label: 'Popular Countries',
+            data: [{% for i in cvalues3 %}
+                    '{{ i }}',
+                {% endfor %}]
+            ,
+            fill: false,
+            lineTension: 0,
+            backgroundColor: [
+                'rgba(255, 209, 26, 0.9)',
+                'rgba(0, 153, 0, 0.8)',
+                'rgba(128, 0, 255, 0.9)',
+                'rgba(255, 77, 255, 0.7)',
+                'rgba(26, 83, 255, 0.7)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }
+        ]
+    },
+    options: {
+        responsive: false,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
+{% endblock %}
+
+
+
+{% block SeasonalMonthsBar3 %}
+
+<canvas id="myChart14" width="400" height="400"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script type="text/javascript">
+var ctx = document.getElementById('myChart14').getContext('2d');
+
+var myChart = new Chart(ctx, {
+
+    type: 'bar',
+    data: {
+        labels: [{% for i in smlabels3 %}
+                    '{{ i }}',
+            {% endfor %}
+        ],
+        datasets: [{
+            label: 'Seasonal Months Patterns',
+            data: [{% for i in smvalues3 %}
+                    '{{ i }}',
+                {% endfor %}]
+            ,
+            fill: false,
+            lineTension: 0,
+            backgroundColor: [
+                'rgba(0, 255, 0, 0.5)',
+                'rgba(54, 162, 235, 0.5)',
+                'rgba(255, 206, 86, 0.5)',
+                'rgba(75, 192, 192, 0.5)',
+                'rgba(153, 102, 255, 0.5)',
+                'rgba(255, 159, 64, 0.5)',
+                'rgba(65, 86, 235, 0.5)',
+                'rgba(135, 96, 206, 0.5)',
+                'rgba(55, 192, 152, 0.5)',
+                'rgba(243, 92, 255, 0.5)',
+                'rgba(125, 150, 84, 0.5)',
+                'rgba(83, 255, 255, 0.5)',
+                'rgba(245, 55, 165, 0.5)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }
+        ]
+    },
+    options: {
+        responsive: false,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
+{% endblock %}
+
+
+
+
+
+{% block LoyaltyPie3 %}
+
+<canvas id="myChart15" width="350" height="350"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script type="text/javascript">
+var ctx = document.getElementById('myChart15').getContext('2d');
+
+var myChart = new Chart(ctx, {
+
+    type: 'pie',
+    data: {
+        labels: [{% for i in loylabels3 %}
+                    '{{ i }}',
+            {% endfor %}
+        ],
+        datasets: [{
+            label: 'Customer Loyalty Levels',
+            data: [{% for i in loyvalues3 %}
+                    '{{ i }}',
+                {% endfor %}]
+            ,
+            fill: false,
+            lineTension: 0,
+            backgroundColor: [
+                'rgba(255, 255, 26, 0.9)',
+                'rgba(255, 71, 26, 0.9)',
+                'rgba(191, 191, 191, 1)',
+                'rgba(0, 64, 255, 0.9)'
+
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)'
+            ],
+            borderWidth: 1
+        }
+        ]
+    },
+    options: {
+        responsive: false,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
+{% endblock %}
+
+
+
+
+
+{% block RoiBar3 %}
+
+<canvas id="myChart16" width="400" height="400"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script type="text/javascript">
+var ctx = document.getElementById('myChart16').getContext('2d');
+
+var myChart = new Chart(ctx, {
+
+    type: 'bar',
+    data: {
+        labels: [{% for i in rolabels3 %}
+                    '{{ i }}',
+            {% endfor %}
+        ],
+        datasets: [{
+            label: 'ROI Values for the Years',
+            data: [{% for i in rovalues3 %}
+                    '{{ i }}',
+                {% endfor %}]
+            ,
+            fill: false,
+            lineTension: 0,
+            backgroundColor: [
+                'rgba(153, 0, 153, 0.8)',
+                'rgba(153, 102, 255, 0.8)',
+                'rgba(255, 159, 64, 0.8)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }
+        ]
+    },
+    options: {
+        responsive: false,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
+{% endblock %}
+
+
+
+
+
+{% block FoodHBar3 %}
+
+<canvas id="myChart17" width="400" height="400"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script type="text/javascript">
+var ctx = document.getElementById('myChart17').getContext('2d');
+
+var myChart = new Chart(ctx, {
+
+    type: 'horizontalBar',
+    data: {
+        labels: [{% for i in flabels3 %}
+                    '{{ i }}',
+            {% endfor %}
+        ],
+        datasets: [{
+            label: 'Food Favours of Visitors',
+            data: [{% for i in fvalues3 %}
+                    '{{ i }}',
+                {% endfor %}]
+            ,
+            fill: false,
+            lineTension: 0,
+            backgroundColor: [
+                'rgba(255, 0, 0, 0.9)',
+                'rgba(26, 26, 255, 0.9)',
+                'rgba(179, 255, 26, 0.8)',
+                'rgba(0, 204, 0, 0.8)',
+                'rgba(153, 102, 255, 0.7)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }
+        ]
+    },
+    options: {
+        responsive: false,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
+{% endblock %}
+
+
+{% block skills3 %}
+    <table>
+    <tr>
+        <th>Country</th>
+        <th>Ability</th>
+    </tr>
+    {% for i in dic33.keys() %}
+       <tr>
+            <td> {{ i }} </td>
+            <td> {{ dic33[i] }} </td>
+       </tr>
+    {% endfor %}
+    </table>
+{% endblock %}
+
+
+
+{% block cancel3 %}
+    {{ cdays3 }}
+{% endblock %}

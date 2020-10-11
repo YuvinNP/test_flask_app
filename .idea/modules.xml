@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/FDM_MiniProject.iml" filepath="$PROJECT_DIR$/.idea/FDM_MiniProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/FlaskPro.iml" filepath="$PROJECT_DIR$/.idea/FlaskPro.iml" />
     </modules>
   </component>
 </project>

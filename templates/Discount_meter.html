@@ -1,0 +1,256 @@
+{% extends 'base.html'%}
+
+
+{% block head %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+
+<style>
+
+		.row {
+		  display: -ms-flexbox; /* IE10 */
+		  display: flex;
+		  -ms-flex-wrap: wrap; /* IE10 */
+		  flex-wrap: wrap;
+		  margin: 0 -16px;
+		}
+
+		.col-25 {
+		  -ms-flex: 25%; /* IE10 */
+		  flex: 25%;
+		}
+
+		.col-50 {
+		  -ms-flex: 50%; /* IE10 */
+		  flex: 50%;
+		}
+
+		.col-75 {
+		  -ms-flex: 75%; /* IE10 */
+		  flex: 75%;
+		}
+
+		.col-25,
+		.col-50,
+		.col-75 {
+		  padding: 0 16px;
+		}
+
+
+
+		input {
+
+		  width: 20%;
+		  margin-bottom: 20px;
+		  padding: 4px;
+		  border: 1px solid #ccc;
+		  border-radius: 3px;
+
+		}
+
+		label {
+		  margin-bottom: 10px;
+		  display: block;
+		}
+
+
+		.btn {
+
+		  color: black;
+		  padding: 12px;
+		  margin: 10px 0;
+		  border: none;
+		  width: 100%;
+		  border-radius: 3px;
+		  cursor: pointer;
+		  font-size: 17px;
+		}
+
+
+		span.price {
+		  float: right;
+		  padding-right:10px;
+
+		}
+
+
+		</style>
+
+{% endblock %}
+
+{% block body %}
+
+<div class="row">
+
+	<!--Financil Details col START HERE-->
+
+	<div class="col-50 ">
+		<div class="container" style="background: #f2f2f2;padding:0px;">
+
+		  <div style="background-color:#2C3E50;color:white;padding:2px;">
+
+				<h4>Estimated Financial Summary After Discount</h4>
+
+		  </div>
+		  <br>
+<div style="padding-left:5px;padding-right:5px">
+		  <table class="table" style = "font-size: 14px;">
+			  <thead class="bg-info" style="color:white;">
+				<tr>
+				  <th scope="col">SEG</th>
+				  <th scope="col">DISCOUNT %</th>
+				  <th scope="col">GUEST COUNT</th>
+				  <th scope="col">LOSS $</th>
+				  <th scope="col">RCPP $</th>
+				</tr>
+			  </thead>
+
+			  <tbody>
+				<tr>
+				  <th scope="row">3</th>
+				  <td>7</td>
+				  <td>1359</td>
+				  <td>1513549.5</td>
+				  <td>208 </td>
+				</tr>
+				<tr>
+				  <th scope="row">1</th>
+				  <td>32</td>
+				  <td>5901</td>
+				  <td>129746974.5</td>
+				  <td>17871 </td>
+				</tr>
+				<tr>
+				  <th scope="row">0</th>
+				  <td>-</td>
+				  <td>-</td>
+				  <td>-</td>
+				  <td>-</td>
+				</tr>
+				<tr>
+				  <th scope="row">2</th>
+				  <td>-</td>
+				  <td>-</td>
+				  <td>-</td>
+				  <td>-</td>
+				</tr>
+
+			  </tbody>
+			</table>
+		<p>Estimated Total Guest Count : <span class="price" style="color:black"><b>7260</b></span></p>
+		<p>Estimated Total Loss : <span class="price" style="color:black"><b>$ 131260523</b></span></p>
+
+		<!--Inserting package details---->
+        </div>
+		<div style="background-color:#2C3E50;color:white;padding:2px;">
+
+				<h4>Inserting Package Details </h4>
+
+		</div>
+		 <br>
+		 <!--Insert segment  offers-->
+        <div style="padding-left:5px;padding-right:5px;">
+		<label><b>SEG:&nbsp; 0&nbsp;</b></label>
+		Dis % :&nbsp;<input type="text" id = "discount0" style = "width:9%">
+		&nbsp;RCPP: <input type="text" id = "rcpp0" style = "width:16%"><BR>
+		PACKAGE: <input type="text" id = "package0" style = "width:80%" placeholder="ENter The Package Details to cover up RCPP..">
+
+		<br>
+		<label><b>SEG:&nbsp; 1&nbsp;</b></label>
+		Dis % :&nbsp;<input type="text" id = "discount1" style = "width:9%">
+		&nbsp;RCPP: <input type="text" id = "rcpp1" style = "width:16%"><BR>
+		PACKAGE: <input type="text" id = "package1" style = "width:80%" placeholder="ENter The Package Details to cover up RCPP..">
+
+
+		<br>
+		<label><b>SEG:&nbsp; 2&nbsp;</b></label>
+		Dis % :&nbsp;<input type="text" id = "discount2" style = "width:9%">
+		&nbsp;RCPP: <input type="text" id = "rcpp2" style = "width:16%"><BR>
+		PACKAGE: <input type="text" id = "package3" style = "width:80%" placeholder="ENter The Package Details to cover up RCPP..">
+
+
+		<br>
+		<label><b>SEG:&nbsp; 3&nbsp;</b></label>
+		Dis % :&nbsp;<input type="text" id = "discount3" style = "width:9%">
+		&nbsp;RCPP: <input type="text" id = "rcpp3" style = "width:16%"><BR>
+		PACKAGE: <input type="text" id = "package3" style = "width:80%" placeholder="ENter The Package Details to cover up RCPP..">
+
+
+		</div>
+            </div>
+	</div>
+
+	<br>
+
+	<!--Discount Details Col start here------>
+
+	<div class="col-50 order-0" >
+		<div class="container" style="background: #f2f2f2; padding:0px; ">
+        <div class="row" s>
+          <div class="col-50">
+			<form action="">
+				<div style="background-color:#2C3E50;color:white;padding:2px;">
+
+					<h4>Discount Details</h4>
+
+				</div>
+				<br>
+                <div style="padding:10px">
+				<b><label for="fname"> OFFER MONTH RANGE :</label></b>
+
+				<!--select the month range from multiple drop down-->
+				<select class="selectpicker" multiple data-live-search="true" style = "width:70%;">
+					<option value="January">January</option>
+					<option value="Febuary">Febuary</option>
+					<option value="March">March</option>
+					<option value="April">April</option>
+					<option value="May">May</option>
+					<option value="June">June</option>
+					<option value="July">July</option>
+					<option value="August">August</option>
+					<option value="September">September</option>
+					<option value="October">October</option>
+					<option value="November">November</option>
+					<option value="December">December</option>
+				</select>
+
+
+				<br>
+				<b><label for="fname"> YEAR RANGE TO PREDICT FUTURE REVENUE :</label></b>
+
+				<!--select the month range from multiple drop down-->
+				<select class="selectpicker" multiple data-live-search="true" style = "width:50%;">
+					<option value="January">2015</option>
+					<option value="Febuary">2016</option>
+					<option value="March">2017</option>
+
+				</select>
+
+				<b><label for="email">DISCOUNT PERCENTAGE</label></b>
+				<input type="number" name="test_name" min="0" oninput="validity.valid||(value='');" >
+                </div>
+				<button type="submit" class="btn btn-primary btn-sm" style="color:white;">Generate Discount</button>
+			</form>
+
+          </div>
+
+
+
+        </div>
+
+    </div>
+	</div>
+
+
+</div>
+
+
+
+<div class="row">
+
+
+
+</div>
+
+{% endblock %}

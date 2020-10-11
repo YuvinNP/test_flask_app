@@ -1,0 +1,122 @@
+{% extends 'index.html'%}
+
+{% block conn %}
+<table class="table table-bordered table-striped mb-0"	style="border-collapse: separate; height:100%;" id="maintable" cellspacing="10px" >
+		  <tbody>
+			<tr>
+			  <td style="background-color:white;;color:#6DBCDB; vertical-align: middle;" >
+
+				<b >GUEST STATUS &nbsp; : &nbsp; <span  style="color:#808B96;;font-size:30px; ">
+
+				<span class="text-success" style='font-size:20px;'>
+							COMING
+				</span>
+
+			  </td>
+			</tr>
+			<tr>
+			  <td style="background-color:#2C3E50;vertical-align: middle;" >
+				<i class='fas fa-shopping-bag' style='font-size:48px;color:white'></i>
+				<b>ARRIVING DAYS &nbsp; : &nbsp;
+
+								{{out['lead_time']}}
+
+				<br>
+				<span style='font-size:14px;color:red'>
+
+				</span>
+			  </td>
+			</tr>
+			  <td style="background-color:#6DBCDB;vertical-align: middle;" >
+
+				<span  style="font-size:2vw; ">
+
+			 			<table class="table table-sm">
+						<thead class="thead-dark">
+							<tr>
+								<td>DISCOUNT</td>
+								<td>OFFERS</td>
+							</tr>
+						</thead>
+							<tr>
+								<td>{{out['discount']}}</td>
+								<td style='font-size:14px;color:white'>
+									{% if out['discount'] !='No Discount' %}
+									{{'3 Days Night With Free SPA'}}
+								{% endif %}</td>
+							</tr>
+						</table>
+
+				</span>
+
+			  </td>
+			</tr>
+
+			<tr>
+
+			 <td style="background-color:#7DC900;vertical-align: middle;" >
+
+				<b>SEGMENT PREFFERED FOOD TYPE :</b>
+
+								{{out['food']}}
+
+
+			  </td>
+
+			</tr>
+
+			<tr>
+
+			 <td style="background-color:#F4F6F6 ;vertical-align: middle;color:#3F454C;" >
+
+				<b>SEGMENT PREFFERED ROOM TYPE :</b>
+
+							{{out['room']}}
+
+			  </td>
+
+			</tr>
+
+			<tr>
+
+			 <td style="background-color:#FC4349 ;vertical-align: middle;color:WHITE;font-size:1vw;" >
+
+				<span style = "font-size:30px;">
+					<b>SYSTEM RECOMMENDATIONS : </b><br>
+				</span>
+				<span>
+					<b>CUSTOMER IS SURE TRY TO DO MORE CROSS & PRODUCT SELLING  <br><br>
+
+					<table class="table table-sm" >
+
+						<!--if guest got adults childred -->
+						{% if child!=0 %}
+						<tr style='font-size:14px;'>
+							<td style='font-size:14px;'>GUEST GOT CHILDREN</td>
+							<td style='font-size:14px;'> Sell out day care service</td>
+						</tr>
+						{% endif %}
+						{% if child==0 %}
+						<tr>
+							<td style='font-size:14px;'>ADULTS COMING</td>
+							<td style='font-size:14px;'>Sell SAUNE , SPA , PUB </td>
+						</tr>
+						{% endif %}
+						<tr>
+							<td style='font-size:14px;'>AIRPORT</td>
+							<td style='font-size:14px;'>Sell our Airport Pickup Servie</td>
+						</tr>
+					</table>
+
+
+
+				</span>
+
+			  </td>
+
+			</tr>
+		  </tbody>
+	</table>
+
+
+{% endblock %}
